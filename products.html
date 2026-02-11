@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - FreshMart Online Grocery Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3082/3082383.png">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 shadow-lg bg-white">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-12 h-12">
+                <div>
+                    <h1 class="text-2xl font-bold text-green-700">FreshMart</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Online Grocery Store</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-8 font-medium">
+                <li><a href="index.html" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a></li>
+                <li><a href="products.html" class="text-green-700 hover:text-green-600 border-b-2 border-green-700 pb-1 transition duration-300">Products</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300">About</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Cart & User Section -->
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Shopping Cart" class="w-7 h-7 cursor-pointer hover:scale-110 transition-transform duration-300" id="cart-icon">
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full cursor-pointer hover:bg-green-100 transition duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User" class="w-6 h-6">
+                    <span class="text-gray-700 font-medium">Account</span>
+                </div>
+                
+                <button class="lg:hidden p-2 text-gray-700 hover:text-green-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col py-4 px-4 space-y-4">
+                <li><a href="index.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Home</a></li>
+                <li><a href="products.html" class="block text-green-700 font-medium py-2 border-l-4 border-green-700 pl-4">Products</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">About</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Contact</a></li>
+                <li><a href="#" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Account</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-gradient-to-r from-green-500 to-green-700 py-12">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Products</h1>
+            <p class="text-xl max-w-2xl mx-auto text-green-100">Fresh groceries delivered to your doorstep. Choose from our wide selection of high-quality products.</p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="container mx-auto px-4 py-12">
+        <!-- Filters and Search -->
+        <div class="mb-12 bg-white rounded-xl shadow-md p-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Search Bar -->
+                <div class="w-full md:w-1/3">
+                    <div class="relative">
+                        <input type="text" id="product-search" placeholder="Search products..." class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Category Filter -->
+                <div class="w-full md:w-auto">
+                    <select id="category-filter" class="w-full md:w-auto px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="all">All Categories</option>
+                        <option value="fruits">Fruits & Vegetables</option>
+                        <option value="dairy">Dairy & Eggs</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="meat">Meat & Poultry</option>
+                        <option value="bakery">Bakery</option>
+                    </select>
+                </div>
+                
+                <!-- Sort By -->
+                <div class="w-full md:w-auto">
+                    <select id="sort-by" class="w-full md:w-auto px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="default">Sort By</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Active Filters -->
+            <div id="active-filters" class="mt-6 flex flex-wrap gap-2">
+                <!-- Active filters will appear here -->
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800" id="products-count">All Products (24)</h2>
+                <div class="flex items-center space-x-2">
+                    <button id="grid-view" class="p-2 text-green-700 border border-green-700 rounded-lg">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button id="list-view" class="p-2 text-gray-500 border border-gray-300 rounded-lg hover:text-green-700">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Products Container -->
+            <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Products will be loaded by JavaScript -->
+                <div class="text-center py-12">
+                    <div class="loading-spinner"></div>
+                    <p class="mt-4 text-gray-600">Loading products...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center">
+            <nav class="flex items-center space-x-2">
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50" id="prev-page" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="flex space-x-1">
+                    <button class="px-4 py-2 bg-green-600 text-white rounded-lg">1</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">2</button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">3</button>
+                    <span class="px-2 py-2">...</span>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">8</button>
+                </div>
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50" id="next-page">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="bg-gradient-to-r from-green-500 to-green-700 rounded-2xl p-8 md:p-12 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Weekly Special Offers</h2>
+            <p class="mb-8 text-green-100 max-w-2xl mx-auto">Subscribe to get exclusive weekly deals on your favorite products</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="px-6 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">FreshMart</h2>
+                    </div>
+                    <p class="text-gray-400">Your trusted online grocery store delivering fresh products since 2015.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fruits & Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Dairy & Eggs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beverages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Snacks</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span class="text-gray-400">123 Grocery Street, Fresh City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span class="text-gray-400">info@freshmart.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> FreshMart Online Grocery Store. All rights reserved.</p>
+                <p>Design & Developed by <a href="https://mohammadullah.netlify.app/" target="_blank"><b>Mohammadullah Al Hanafi</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="text-2xl font-bold text-gray-800">Your Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <div id="cart-items" class="space-y-4">
+                    <!-- Cart items will be populated by JavaScript -->
+                    <p id="empty-cart-message" class="text-center text-gray-500 py-8">Your cart is empty</p>
+                </div>
+                <div class="border-t pt-6 mt-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-lg font-semibold">Total:</span>
+                        <span id="cart-total" class="text-2xl font-bold text-green-700">$0.00</span>
+                    </div>
+                    <button class="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products JavaScript -->
+    <script>
+        // Extended product database for products page
+        const allProducts = [
+            // Fruits & Vegetables (8 items)
+            {
+                id: 1,
+                name: "Organic Apples",
+                category: "fruits",
+                price: 3.99,
+                image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.5,
+                unit: "per lb",
+                inStock: true,
+                discount: 10
+            },
+            {
+                id: 2,
+                name: "Fresh Avocados",
+                category: "fruits",
+                price: 2.49,
+                image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.7,
+                unit: "each",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 3,
+                name: "Organic Bananas",
+                category: "fruits",
+                price: 0.69,
+                image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80",
+                rating: 4.6,
+                unit: "per lb",
+                inStock: true,
+                discount: 5
+            },
+            {
+                id: 4,
+                name: "Fresh Strawberries",
+                category: "fruits",
+                price: 4.99,
+                image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.8,
+                unit: "1 lb",
+                inStock: true,
+                discount: 15
+            },
+            {
+                id: 5,
+                name: "Organic Carrots",
+                category: "fruits",
+                price: 2.29,
+                image: "https://images.unsplash.com/photo-1582515073490-39981397c445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.4,
+                unit: "per lb",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 6,
+                name: "Fresh Tomatoes",
+                category: "fruits",
+                price: 1.99,
+                image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.3,
+                unit: "per lb",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 7,
+                name: "Organic Spinach",
+                category: "fruits",
+                price: 3.49,
+                image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.5,
+                unit: "5 oz",
+                inStock: true,
+                discount: 10
+            },
+            {
+                id: 8,
+                name: "Fresh Bell Peppers",
+                category: "fruits",
+                price: 1.79,
+                image: "https://images.unsplash.com/photo-1566385101042-1a0f0c126c96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.6,
+                unit: "each",
+                inStock: false,
+                discount: 0
+            },
+            
+            // Dairy & Eggs (8 items)
+            {
+                id: 9,
+                name: "Fresh Milk",
+                category: "dairy",
+                price: 4.49,
+                image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.8,
+                unit: "1 gallon",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 10,
+                name: "Free Range Eggs",
+                category: "dairy",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.9,
+                unit: "dozen",
+                inStock: true,
+                discount: 5
+            },
+            {
+                id: 11,
+                name: "Greek Yogurt",
+                category: "dairy",
+                price: 1.29,
+                image: "https://www.thecandidcooks.com/wp-content/uploads/2025/06/greek-yogurt-dessert-parfait-v4.jpg",
+                rating: 4.5,
+                unit: "5.3 oz",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 12,
+                name: "Cheddar Cheese",
+                category: "dairy",
+                price: 4.79,
+                image: "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.7,
+                unit: "8 oz",
+                inStock: true,
+                discount: 15
+            },
+            {
+                id: 13,
+                name: "Organic Butter",
+                category: "dairy",
+                price: 6.49,
+                image: "https://images.unsplash.com/photo-1557778296-d5e6e1549021?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.8,
+                unit: "1 lb",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 14,
+                name: "Cottage Cheese",
+                category: "dairy",
+                price: 2.99,
+                image: "https://images.unsplash.com/photo-1611258623152-38e1f5ead8ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.4,
+                unit: "16 oz",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 15,
+                name: "Almond Milk",
+                category: "dairy",
+                price: 3.99,
+                image: "https://images.unsplash.com/photo-1622484202385-6d0e80bd8d5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.6,
+                unit: "64 oz",
+                inStock: true,
+                discount: 10
+            },
+            {
+                id: 16,
+                name: "Sour Cream",
+                category: "dairy",
+                price: 2.29,
+                image: "https://images.unsplash.com/photo-1565700299201-5dfed7e937b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.3,
+                unit: "16 oz",
+                inStock: false,
+                discount: 0
+            },
+            
+            // Beverages (8 items)
+            {
+                id: 17,
+                name: "Orange Juice",
+                category: "beverages",
+                price: 3.79,
+                image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1212&q=80",
+                rating: 4.4,
+                unit: "64 oz",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 18,
+                name: "Green Tea",
+                category: "beverages",
+                price: 5.49,
+                image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80",
+                rating: 4.7,
+                unit: "20 bags",
+                inStock: true,
+                discount: 20
+            },
+            {
+                id: 19,
+                name: "Coffee Beans",
+                category: "beverages",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.9,
+                unit: "12 oz",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 20,
+                name: "Sparkling Water",
+                category: "beverages",
+                price: 4.99,
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.5,
+                unit: "12-pack",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 21,
+                name: "Apple Juice",
+                category: "beverages",
+                price: 2.99,
+                image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+                rating: 4.2,
+                unit: "64 oz",
+                inStock: true,
+                discount: 0
+            },
+            {
+                id: 22,
+                name: "Energy Drink",
+                category: "beverages",
+                price: 2.49,
+                image: "https://images.unsplash.com/photo-1624300629296-4c4e2a5e3f3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 3.9,
+                unit: "16 oz",
+                inStock: true,
+                discount: 15
+            },
+            {
+                id: 23,
+                name: "Iced Tea",
+                category: "beverages",
+                price: 3.29,
+                image: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                rating: 4.3,
+                unit: "12-pack",
+                inStock: false,
+                discount: 0
+            },
+            {
+                id: 24,
+                name: "Coconut Water",
+                category: "beverages",
+                price: 2.99,
+                image: "https://images.unsplash.com/photo-1628992682633-bf2d40cb595f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                rating: 4.6,
+                unit: "17 oz",
+                inStock: true,
+                discount: 10
+            }
+        ];
+
+        // Initialize products page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            setupEventListeners();
+        });
+
+        // Load and display products
+        function loadProducts() {
+            const productsContainer = document.getElementById('products-container');
+            const productsCount = document.getElementById('products-count');
+            
+            // Display all products initially
+            displayProducts(allProducts);
+            productsCount.textContent = `All Products (${allProducts.length})`;
+        }
+
+        // Display products in grid
+        function displayProducts(products) {
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fas fa-search text-5xl text-gray-300 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">No products found</h3>
+                        <p class="text-gray-500">Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            products.forEach(product => {
+                const discountPrice = product.discount > 0 
+                    ? (product.price * (100 - product.discount) / 100).toFixed(2)
+                    : null;
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-xl shadow-md overflow-hidden product-card animate-fade-in';
+                productCard.innerHTML = `
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                        
+                        ${product.discount > 0 ? `
+                            <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                -${product.discount}%
+                            </div>
+                        ` : ''}
+                        
+                        ${!product.inStock ? `
+                            <div class="absolute top-4 right-4 bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Out of Stock
+                            </div>
+                        ` : ''}
+                        
+                        <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition duration-300"></div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-800">${product.name}</h3>
+                                <p class="text-gray-500 text-sm capitalize">${product.category}</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">${product.unit}</span>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                ${getStarRating(product.rating)}
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">${product.rating}</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                ${discountPrice ? `
+                                    <div class="flex items-center">
+                                        <span class="text-2xl font-bold text-green-700">$${discountPrice}</span>
+                                        <span class="text-gray-400 line-through ml-2">$${product.price.toFixed(2)}</span>
+                                    </div>
+                                ` : `
+                                    <span class="text-2xl font-bold text-green-700">$${product.price.toFixed(2)}</span>
+                                `}
+                            </div>
+                            
+                            <button class="px-4 py-2 ${product.inStock ? 'bg-green-600 hover:bg-green-700' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition duration-300 add-to-cart-btn" 
+                                    data-id="${product.id}" 
+                                    ${!product.inStock ? 'disabled' : ''}>
+                                <i class="fas fa-cart-plus mr-2"></i>${product.inStock ? 'Add' : 'Out of Stock'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(productCard);
+            });
+            
+            // Add event listeners to add-to-cart buttons
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (this.disabled) return;
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+        }
+
+        // Star rating helper
+        function getStarRating(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Setup event listeners for filters
+        function setupEventListeners() {
+            const searchInput = document.getElementById('product-search');
+            const categoryFilter = document.getElementById('category-filter');
+            const sortBy = document.getElementById('sort-by');
+            const gridViewBtn = document.getElementById('grid-view');
+            const listViewBtn = document.getElementById('list-view');
+            
+            // Search functionality
+            searchInput.addEventListener('input', filterProducts);
+            
+            // Category filter
+            categoryFilter.addEventListener('change', filterProducts);
+            
+            // Sort by
+            sortBy.addEventListener('change', filterProducts);
+            
+            // View toggles
+            gridViewBtn.addEventListener('click', function() {
+                gridViewBtn.classList.add('text-green-700', 'border-green-700');
+                gridViewBtn.classList.remove('text-gray-500', 'border-gray-300');
+                listViewBtn.classList.add('text-gray-500', 'border-gray-300');
+                listViewBtn.classList.remove('text-green-700', 'border-green-700');
+                document.getElementById('products-container').classList.remove('list-view');
+            });
+            
+            listViewBtn.addEventListener('click', function() {
+                listViewBtn.classList.add('text-green-700', 'border-green-700');
+                listViewBtn.classList.remove('text-gray-500', 'border-gray-300');
+                gridViewBtn.classList.add('text-gray-500', 'border-gray-300');
+                gridViewBtn.classList.remove('text-green-700', 'border-green-700');
+                document.getElementById('products-container').classList.add('list-view');
+            });
+        }
+
+        // Filter products based on search, category, and sort
+        function filterProducts() {
+            const searchTerm = document.getElementById('product-search').value.toLowerCase();
+            const category = document.getElementById('category-filter').value;
+            const sortBy = document.getElementById('sort-by').value;
+            const productsCount = document.getElementById('products-count');
+            
+            let filteredProducts = [...allProducts];
+            
+            // Filter by search term
+            if (searchTerm) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) || 
+                    product.category.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            // Filter by category
+            if (category !== 'all') {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.category === category
+                );
+            }
+            
+            // Sort products
+            if (sortBy !== 'default') {
+                filteredProducts.sort((a, b) => {
+                    switch(sortBy) {
+                        case 'price-low':
+                            return a.price - b.price;
+                        case 'price-high':
+                            return b.price - a.price;
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        case 'rating':
+                            return b.rating - a.rating;
+                        default:
+                            return 0;
+                    }
+                });
+            }
+            
+            // Update product count
+            productsCount.textContent = `Showing ${filteredProducts.length} of ${allProducts.length} products`;
+            
+            // Display filtered products
+            displayProducts(filteredProducts);
+        }
+
+        // Cart functions (simplified for this page)
+        let cart = [];
+        
+        function addToCart(productId) {
+            const product = allProducts.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart UI
+            updateCartUI();
+            showToast(`${product.name} added to cart!`);
+        }
+        
+        function updateCartUI() {
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = totalItems;
+            
+            // Update cart total
+            const total = cart.reduce((sum, item) => {
+                const discountPrice = item.discount > 0 
+                    ? (item.price * (100 - item.discount) / 100)
+                    : item.price;
+                return sum + (discountPrice * item.quantity);
+            }, 0);
+            document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        function showToast(message) {
+            // Create toast notification
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-3 text-xl"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

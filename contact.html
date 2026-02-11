@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FreshMart Online Grocery Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3082/3082383.png">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 shadow-lg bg-white">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-12 h-12">
+                <div>
+                    <h1 class="text-2xl font-bold text-green-700">FreshMart</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Online Grocery Store</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-8 font-medium">
+                <li><a href="index.html" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a></li>
+                <li><a href="products.html" class="text-gray-700 hover:text-green-600 transition duration-300">Products</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300">About</a></li>
+                <li><a href="contact.html" class="text-green-700 hover:text-green-600 border-b-2 border-green-700 pb-1 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Cart & User Section -->
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Shopping Cart" class="w-7 h-7 cursor-pointer hover:scale-110 transition-transform duration-300" id="cart-icon">
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full cursor-pointer hover:bg-green-100 transition duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User" class="w-6 h-6">
+                    <span class="text-gray-700 font-medium">Account</span>
+                </div>
+                
+                <button class="lg:hidden p-2 text-gray-700 hover:text-green-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col py-4 px-4 space-y-4">
+                <li><a href="index.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Home</a></li>
+                <li><a href="products.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Products</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">About</a></li>
+                <li><a href="contact.html" class="block text-green-700 font-medium py-2 border-l-4 border-green-700 pl-4">Contact</a></li>
+                <li><a href="#" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Account</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-gradient-to-r from-green-500 to-green-700 py-12">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Contact Us</h1>
+            <p class="text-xl max-w-2xl mx-auto text-green-100">We're here to help! Get in touch with us for any questions or feedback.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Contact Information -->
+            <div class="lg:col-span-1">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Get in Touch</h2>
+                
+                <div class="space-y-8">
+                    <!-- Address -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-1">Visit Our Store</h3>
+                            <p class="text-gray-600">123 Grocery Street, Fresh City, FC 12345</p>
+                            <p class="text-gray-500 text-sm mt-1">Open Monday to Saturday: 8:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-1">Call Us</h3>
+                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                            <p class="text-gray-500 text-sm mt-1">Customer service available 24/7</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-1">Email Us</h3>
+                            <p class="text-gray-600">info@freshmart.com</p>
+                            <p class="text-gray-600">support@freshmart.com</p>
+                            <p class="text-gray-500 text-sm mt-1">We typically respond within 2 hours</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center hover:bg-green-200 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center hover:bg-green-200 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center hover:bg-green-200 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-green-100 text-green-700 rounded-full flex items-center justify-center hover:bg-green-200 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">Have questions about our products or services? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                       placeholder="Enter your full name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                       placeholder="Enter your email address">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject *</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                   placeholder="What is this regarding?">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="category" class="block text-gray-700 font-medium mb-2">Category *</label>
+                            <select id="category" name="category" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option value="">Select a category</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Issue</option>
+                                <option value="delivery">Delivery Problem</option>
+                                <option value="product">Product Feedback</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                      placeholder="Please provide details about your inquiry"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" name="newsletter" 
+                                       class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                <label for="newsletter" class="ml-2 text-gray-700">
+                                    Subscribe to our newsletter for updates and special offers
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" 
+                                class="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                            <span id="submit-text">Send Message</span>
+                            <div id="submit-spinner" class="hidden ml-2">
+                                <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        </button>
+                        
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Find quick answers to common questions about FreshMart</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">How fast is your delivery?</h3>
+                            <p class="text-gray-600">We offer delivery within 30 minutes in most urban areas. For suburban areas, delivery typically takes 45-60 minutes. You can track your order in real-time through our app or website.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">What is your return policy?</h3>
+                            <p class="text-gray-600">If you're not satisfied with any product, you can return it within 24 hours for a full refund. Simply contact our customer service team, and we'll arrange a pickup and refund.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Do you offer organic products?</h3>
+                            <p class="text-gray-600">Yes! We have a wide selection of organic fruits, vegetables, dairy products, and pantry staples. Look for the "Organic" badge on our products when shopping online.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-100 text-green-700 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">How do I track my order?</h3>
+                            <p class="text-gray-600">Once your order is confirmed, you'll receive a tracking link via email and SMS. You can also log into your account on our website or app to see real-time updates on your delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-green-700 font-semibold hover:text-green-600 transition duration-300">
+                    View all FAQs <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Locations -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Store Locations</h2>
+            <p class="text-gray-600 max-w-3xl mx-auto">Visit us at one of our physical locations for an in-person shopping experience</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Location 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                     alt="Downtown Store" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Downtown FreshMart</h3>
+                    <p class="text-gray-600 mb-4">123 Grocery Street, Fresh City, FC 12345</p>
+                    <div class="flex items-center text-gray-500 mb-4">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>8:00 AM - 10:00 PM (Mon-Sat)</span>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-green-700 font-medium hover:text-green-600 transition duration-300">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Location 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                     alt="Westside Store" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Westside FreshMart</h3>
+                    <p class="text-gray-600 mb-4">456 Market Avenue, Westside, WS 67890</p>
+                    <div class="flex items-center text-gray-500 mb-4">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>7:00 AM - 11:00 PM (Mon-Sun)</span>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-green-700 font-medium hover:text-green-600 transition duration-300">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Location 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" 
+                     alt="Eastgate Store" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Eastgate FreshMart</h3>
+                    <p class="text-gray-600 mb-4">789 Mall Road, Eastgate, EG 45678</p>
+                    <div class="flex items-center text-gray-500 mb-4">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>9:00 AM - 9:00 PM (Mon-Sat)</span>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-green-700 font-medium hover:text-green-600 transition duration-300">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">FreshMart</h2>
+                    </div>
+                    <p class="text-gray-400">Your trusted online grocery store delivering fresh products since 2015.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fruits & Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Dairy & Eggs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beverages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Snacks</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span class="text-gray-400">123 Grocery Street, Fresh City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span class="text-gray-400">info@freshmart.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> FreshMart Online Grocery Store. All rights reserved.</p>
+                <p>Design & Developed by <a href="https://mohammadullah.netlify.app/" target="_blank"><b>Mohammadullah Al Hanafi</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact Form Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('animate-slide-in');
+                    
+                    // Change icon
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.className = 'fas fa-bars text-xl';
+                    } else {
+                        icon.className = 'fas fa-times text-xl';
+                    }
+                });
+                
+                // Close mobile menu when clicking a link
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.querySelector('i').className = 'fas fa-bars text-xl';
+                    });
+                });
+            }
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const formMessage = document.getElementById('form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Sending...';
+                    submitSpinner.classList.remove('hidden');
+                    
+                    // Simulate form submission (in a real app, you would send to a server)
+                    setTimeout(() => {
+                        // Show success message
+                        formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
+                        formMessage.className = 'mt-4 text-center text-green-600 font-medium';
+                        formMessage.classList.remove('hidden');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Send Message';
+                        submitSpinner.classList.add('hidden');
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            formMessage.classList.add('hidden');
+                        }, 5000);
+                    }, 1500);
+                });
+            }
+            
+            // Form validation
+            const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea, #contact-form select');
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '' && this.hasAttribute('required')) {
+                        this.classList.add('border-red-500');
+                        this.classList.remove('border-gray-300');
+                    } else {
+                        this.classList.remove('border-red-500');
+                        this.classList.add('border-gray-300');
+                    }
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        this.classList.remove('border-red-500');
+                        this.classList.add('border-gray-300');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

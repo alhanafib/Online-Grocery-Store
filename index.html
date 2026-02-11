@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Your Online Grocery Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3082/3082383.png">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 shadow-lg bg-white">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-12 h-12">
+                <div>
+                    <h1 class="text-2xl font-bold text-green-700">FreshMart</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Online Grocery Store</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-8 font-medium">
+                <li><a href="index.html" class="text-green-700 hover:text-green-600 border-b-2 border-green-700 pb-1 transition duration-300">Home</a></li>
+                <li><a href="products.html" class="text-gray-700 hover:text-green-600 transition duration-300">Products</a></li>
+                <li><a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300">About</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Cart & User Section -->
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Shopping Cart" class="w-7 h-7 cursor-pointer hover:scale-110 transition-transform duration-300" id="cart-icon">
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full cursor-pointer hover:bg-green-100 transition duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User" class="w-6 h-6">
+                    <span class="text-gray-700 font-medium">Account</span>
+                </div>
+                
+                <button class="lg:hidden p-2 text-gray-700 hover:text-green-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col py-4 px-4 space-y-4">
+                <li><a href="index.html" class="block text-green-700 font-medium py-2 border-l-4 border-green-700 pl-4">Home</a></li>
+                <li><a href="products.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Products</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">About</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Contact</a></li>
+                <li><a href="#" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Account</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-12 md:py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="flex-1 text-center lg:text-left animate-fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
+                Fresh Groceries Delivered to 
+                <span class="text-green-600 block mt-2">Your Doorstep</span>
+            </h1>
+            <p class="mt-6 text-gray-600 text-lg md:text-xl max-w-2xl">
+                Order fresh fruits, vegetables, dairy products, and household essentials online. 
+                Get free delivery on orders above $50 and enjoy the best quality produce.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button class="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:bg-green-700 transform hover:-translate-y-1 transition duration-300">
+                    <i class="fas fa-shopping-cart mr-2"></i>Shop Now
+                </button>
+                <button class="px-8 py-3 bg-white text-green-700 border-2 border-green-600 font-semibold rounded-lg shadow hover:bg-green-50 transition duration-300">
+                    <i class="fas fa-play-circle mr-2"></i>How It Works
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-green-700">5000+</h3>
+                    <p class="text-gray-600">Happy Customers</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-green-700">2000+</h3>
+                    <p class="text-gray-600">Products</p>
+                </div>
+                <div class="text-center md:col-span-1 col-span-2">
+                    <h3 class="text-3xl font-bold text-green-700">30 Min</h3>
+                    <p class="text-gray-600">Fast Delivery</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 relative">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                 alt="Fresh Groceries" 
+                 class="w-full max-w-lg rounded-2xl shadow-2xl animate-float">
+            
+            <!-- Floating Badges -->
+            <div class="absolute -top-4 -right-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded-full shadow-lg animate-pulse">
+                <span class="font-bold">50% OFF</span> on Fruits
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg animate-bounce-slow">
+                <span class="font-bold">Free Delivery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Shop By Categories</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Find all your grocery needs organized in easy-to-browse categories</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Category 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer">
+                <div class="h-40 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" 
+                         alt="Fruits & Vegetables" 
+                         class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Fruits & Vegetables</h3>
+                    <p class="text-gray-600 text-sm mt-1">Fresh from farms</p>
+                </div>
+            </div>
+            
+            <!-- Category 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer">
+                <div class="h-40 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80" 
+                         alt="Dairy & Eggs" 
+                         class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Dairy & Eggs</h3>
+                    <p class="text-gray-600 text-sm mt-1">Fresh dairy products</p>
+                </div>
+            </div>
+            
+            <!-- Category 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer">
+                <div class="h-40 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Beverages" 
+                         class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Beverages</h3>
+                    <p class="text-gray-600 text-sm mt-1">Juices, sodas & more</p>
+                </div>
+            </div>
+            
+            <!-- Category 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer">
+                <div class="h-40 overflow-hidden">
+                    <img src="https://i0.wp.com/howdyhowdyusa.com/wp-content/uploads/2024/09/Snacks-Sept-Square.jpg?fit=900%2C800&ssl=1" 
+                         alt="Snacks" 
+                         class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Snacks</h3>
+                    <p class="text-gray-600 text-sm mt-1">Chips, cookies & more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container mx-auto px-4 py-12 bg-green-50 rounded-3xl my-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Featured Products</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">This week's most popular grocery items</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product cards will be populated by JavaScript -->
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="products.html" class="inline-block px-8 py-3 bg-white text-green-700 border-2 border-green-600 font-semibold rounded-lg shadow hover:bg-green-50 transition duration-300">
+                View All Products <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">How It Works</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Get your groceries in 3 simple steps</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-3">Browse & Select</h3>
+                <p class="text-gray-600">Browse through our wide selection of fresh groceries and add items to your cart</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-3">Checkout</h3>
+                <p class="text-gray-600">Enter your delivery address and choose a payment method</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                <h3 class="font-bold text-xl text-gray-800 mb-3">Fast Delivery</h3>
+                <p class="text-gray-600">Get your fresh groceries delivered to your doorstep within 30 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="bg-gradient-to-r from-green-500 to-green-700 rounded-2xl p-8 md:p-12 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Get 10% Off Your First Order</h2>
+            <p class="mb-8 text-green-100 max-w-2xl mx-auto">Subscribe to our newsletter and receive exclusive offers, recipes, and grocery tips</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="px-6 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">FreshMart</h2>
+                    </div>
+                    <p class="text-gray-400">Your trusted online grocery store delivering fresh products since 2015.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fruits & Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Dairy & Eggs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beverages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Snacks</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span class="text-gray-400">123 Grocery Street, Fresh City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span class="text-gray-400">info@freshmart.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> FreshMart Online Grocery Store. All rights reserved.</p>
+                <p>Design & Developed by <a href="https://mohammadullah.netlify.app/" target="_blank"><b>Mohammadullah Al Hanafi</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="text-2xl font-bold text-gray-800">Your Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div class="p-6">
+                <div id="cart-items" class="space-y-4">
+                    <!-- Cart items will be populated by JavaScript -->
+                    <p id="empty-cart-message" class="text-center text-gray-500 py-8">Your cart is empty</p>
+                </div>
+                <div class="border-t pt-6 mt-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-lg font-semibold">Total:</span>
+                        <span id="cart-total" class="text-2xl font-bold text-green-700">$0.00</span>
+                    </div>
+                    <button class="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

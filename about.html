@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FreshMart Online Grocery Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3082/3082383.png">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 shadow-lg bg-white">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-12 h-12">
+                <div>
+                    <h1 class="text-2xl font-bold text-green-700">FreshMart</h1>
+                    <p class="text-xs text-gray-500 -mt-1">Online Grocery Store</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-8 font-medium">
+                <li><a href="index.html" class="text-gray-700 hover:text-green-600 transition duration-300">Home</a></li>
+                <li><a href="products.html" class="text-gray-700 hover:text-green-600 transition duration-300">Products</a></li>
+                <li><a href="about.html" class="text-green-700 hover:text-green-600 border-b-2 border-green-700 pb-1 transition duration-300">About</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Cart & User Section -->
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Shopping Cart" class="w-7 h-7 cursor-pointer hover:scale-110 transition-transform duration-300" id="cart-icon">
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full cursor-pointer hover:bg-green-100 transition duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User" class="w-6 h-6">
+                    <span class="text-gray-700 font-medium">Account</span>
+                </div>
+                
+                <button class="lg:hidden p-2 text-gray-700 hover:text-green-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white shadow-md hidden" id="mobile-menu">
+            <ul class="flex flex-col py-4 px-4 space-y-4">
+                <li><a href="index.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Home</a></li>
+                <li><a href="products.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Products</a></li>
+                <li><a href="about.html" class="block text-green-700 font-medium py-2 border-l-4 border-green-700 pl-4">About</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Contact</a></li>
+                <li><a href="#" class="block text-gray-700 hover:text-green-600 py-2 pl-4">Account</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-gradient-to-r from-green-500 to-green-700 py-12">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">About FreshMart</h1>
+            <p class="text-xl max-w-2xl mx-auto text-green-100">Delivering freshness to your doorstep since 2015</p>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex-1">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                     alt="FreshMart Store" 
+                     class="w-full rounded-2xl shadow-2xl">
+            </div>
+            
+            <div class="flex-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                <p class="text-gray-600 mb-4">
+                    Founded in 2015, FreshMart started as a small local grocery store with a simple mission: to provide fresh, high-quality products to our community. What began as a single store has now grown into a leading online grocery delivery service serving thousands of happy customers.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Our founders, Sarah and Michael Johnson, were passionate about making fresh, healthy food accessible to everyone. They saw the need for a convenient grocery solution that doesn't compromise on quality, and FreshMart was born.
+                </p>
+                <p class="text-gray-600">
+                    Today, we partner with local farmers and trusted suppliers to bring you the best selection of fruits, vegetables, dairy products, and household essentials, all delivered fresh to your doorstep.
+                </p>
+                
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-green-50 rounded-xl">
+                        <h3 class="text-3xl font-bold text-green-700">8+</h3>
+                        <p class="text-gray-600">Years of Service</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-xl">
+                        <h3 class="text-3xl font-bold text-green-700">5000+</h3>
+                        <p class="text-gray-600">Happy Customers</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-xl">
+                        <h3 class="text-3xl font-bold text-green-700">98%</h3>
+                        <p class="text-gray-600">Customer Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission & Values -->
+    <section class="bg-green-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Mission & Values</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We're committed to making grocery shopping convenient, affordable, and sustainable for everyone.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Freshness Guaranteed</h3>
+                    <p class="text-gray-600">We source directly from farmers and suppliers to ensure you get the freshest products possible, delivered within hours of ordering.</p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fast Delivery</h3>
+                    <p class="text-gray-600">Our efficient delivery network ensures your groceries arrive at your doorstep within 30 minutes in most areas.</p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-green-100 text-green-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sustainable Practices</h3>
+                    <p class="text-gray-600">We use eco-friendly packaging and work with suppliers who prioritize sustainable farming and production methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+            <p class="text-gray-600 max-w-3xl mx-auto">The passionate people behind FreshMart who work tirelessly to bring you the best grocery experience.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                     alt="Sarah Johnson" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Sarah Johnson</h3>
+                    <p class="text-green-600 font-medium">Co-Founder & CEO</p>
+                    <p class="text-gray-600 text-sm mt-2">Sarah leads our mission to make fresh groceries accessible to all communities.</p>
+                </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                     alt="Michael Johnson" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Michael Johnson</h3>
+                    <p class="text-green-600 font-medium">Co-Founder & COO</p>
+                    <p class="text-gray-600 text-sm mt-2">Michael oversees our operations and supply chain to ensure efficiency and quality.</p>
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" 
+                     alt="Jessica Chen" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">Jessica Chen</h3>
+                    <p class="text-green-600 font-medium">Head of Product</p>
+                    <p class="text-gray-600 text-sm mt-2">Jessica curates our product selection and ensures we offer the best quality items.</p>
+                </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                     alt="David Wilson" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800">David Wilson</h3>
+                    <p class="text-green-600 font-medium">Delivery Operations Manager</p>
+                    <p class="text-gray-600 text-sm mt-2">David manages our delivery fleet to ensure timely and efficient service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our customers have to say about their FreshMart experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"FreshMart has completely changed how I shop for groceries. The quality is always excellent, and the delivery is incredibly fast. I save so much time each week!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                             alt="Emily Rodriguez" 
+                             class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Customer for 3 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"The produce is always fresh, and I love that they source from local farms. Their commitment to sustainability really aligns with my values."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                             alt="James Wilson" 
+                             class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">James Wilson</h4>
+                            <p class="text-gray-600 text-sm">Customer for 2 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"As a busy mom, FreshMart has been a lifesaver. I can order groceries during my lunch break and have them delivered by the time I get home. The quality is always consistent."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80" 
+                             alt="Lisa Chen" 
+                             class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Lisa Chen</h4>
+                            <p class="text-gray-600 text-sm">Customer for 4 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="bg-gradient-to-r from-green-500 to-green-700 rounded-2xl p-8 md:p-12 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Experience FreshMart?</h2>
+            <p class="mb-8 text-green-100 max-w-2xl mx-auto">Join thousands of satisfied customers who have made FreshMart their go-to for fresh groceries.</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="products.html" class="px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition duration-300">
+                    Shop Now
+                </a>
+                <a href="contact.html" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-green-700 transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="FreshMart Logo" class="w-10 h-10">
+                        <h2 class="text-2xl font-bold">FreshMart</h2>
+                    </div>
+                    <p class="text-gray-400">Your trusted online grocery store delivering fresh products since 2015.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fruits & Vegetables</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Dairy & Eggs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beverages</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Snacks</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span class="text-gray-400">123 Grocery Street, Fresh City</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span class="text-gray-400">info@freshmart.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400">
+                <p>&copy; <span id="currentYear"></span> FreshMart Online Grocery Store. All rights reserved.</p>
+                <p>Design & Developed by <a href="https://mohammadullah.netlify.app/" target="_blank"><b>Mohammadullah Al Hanafi</b></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for about page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('animate-slide-in');
+                    
+                    // Change icon
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.className = 'fas fa-bars text-xl';
+                    } else {
+                        icon.className = 'fas fa-times text-xl';
+                    }
+                });
+                
+                // Close mobile menu when clicking a link
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.querySelector('i').className = 'fas fa-bars text-xl';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
